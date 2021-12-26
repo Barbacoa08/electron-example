@@ -1,24 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ReactWeather, {useOpenWeather} from "react-open-weather";
+
+import "./App.css";
 
 function App() {
+  const {data, isLoading, errorMessage} = useOpenWeather({
+    key: "fe49102f8802f1d0da789007901a658c",
+    lat: "44.958840",
+    lon: "-93.136760",
+    lang: "en",
+    unit: "standard", // values are (metric, standard, imperial)
+  });
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ReactWeather
+        isLoading={isLoading}
+        errorMessage={errorMessage}
+        data={data}
+        lang="en"
+        locationLabel="St Paul"
+        unitsLabels={{temperature: "F", windSpeed: "M/h"}}
+        showForecast
+      />
     </div>
   );
 }
