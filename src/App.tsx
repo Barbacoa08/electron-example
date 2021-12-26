@@ -1,5 +1,4 @@
 import ReactWeather, {useOpenWeather} from "react-open-weather";
-
 import "./App.css";
 
 function App() {
