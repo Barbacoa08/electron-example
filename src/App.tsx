@@ -8,7 +8,7 @@ function App() {
     lat: "44.958840",
     lon: "-93.136760",
     lang: "en",
-    unit: "standard", // values are (metric, standard, imperial)
+    unit: "imperial", // values are (metric, standard, imperial)
   });
 
   return (
