@@ -2,7 +2,7 @@
   "name": "electron-example",
   "version": "0.1.0",
   "private": true,
-  "main": "public/electron.js",
+  "main": "public/electron.ts",
   "scripts": {
     "start": "react-scripts start",
     "lint": "eslint .",
