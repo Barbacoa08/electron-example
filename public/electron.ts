@@ -8,7 +8,7 @@ function createWindow() {
     height: 600,
     webPreferences: {
       nodeIntegration: true,
-      preload: path.join(__dirname, "../src/scripts/preload.js"),
+      preload: path.join(__dirname, "../build/index.html"),
     },
   });
 
