@@ -1,13 +1,15 @@
-import { AppDefaultDimensions } from "../src/utils";
-
 const { app, BrowserWindow } = require("electron");
 const isDev = require("electron-is-dev");
 const path = require("path");
 
+// import { AppDefaultDimensions } from "../src/utils";
+
 function createWindow() {
   const win = new BrowserWindow({
-    width: AppDefaultDimensions.width,
-    height: AppDefaultDimensions.height,
+    // width: AppDefaultDimensions.width,
+    // height: AppDefaultDimensions.height,
+    width: 800,
+    height: 600,
     webPreferences: {
       nodeIntegration: true,
       preload: path.join(__dirname, "../src/scripts/preload.js"),
