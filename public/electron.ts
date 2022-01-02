@@ -1,11 +1,13 @@
+import { AppDefaultDimensions } from "../src/utils";
+
 const { app, BrowserWindow } = require("electron");
 const isDev = require("electron-is-dev");
 const path = require("path");
 
 function createWindow() {
   const win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: AppDefaultDimensions.width,
+    height: AppDefaultDimensions.height,
     webPreferences: {
       nodeIntegration: true,
       preload: path.join(__dirname, "../src/scripts/preload.js"),
@@ -23,6 +25,11 @@ function createWindow() {
   if (isDev) {
     win.webContents.openDevTools({ mode: "detach" });
   }
+}
+
+// Handle creating/removing shortcuts on Windows when installing/uninstalling
+if (require("electron-squirrel-startup")) {
+  app.quit();
 }
 
 // This method will be called when Electron has finished
