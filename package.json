@@ -1,7 +1,8 @@
 {
   "name": "electron-example",
   "version": "0.1.0",
-  "private": true,
+  "author": "barbacoa08",
+  "description": "an example project to show how to build an Electron app with React that uses `fetch`",
   "main": "public/electron.ts",
   "homepage": "./",
   "scripts": {
