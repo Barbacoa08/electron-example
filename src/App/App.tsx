@@ -1,3 +1,4 @@
+import { ImageOfTheDay } from "../ImageOfTheDay";
 import { Weather } from "../Weather";
 
 import "./App.css";
@@ -6,6 +7,8 @@ export const App = () => {
   return (
     <div className="App">
       <Weather />
+
+      <ImageOfTheDay />
 
       <div>
         We are using Node.js <span id="node-version"></span>, Chromium{" "}
