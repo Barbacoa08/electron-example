@@ -1,9 +1,15 @@
 import { useEffect, useState } from "react";
 
-const api = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY";
+import { AppDefaultDimensions } from "../utils";
+
+// key generated for `sabe12070` via `https://api.nasa.gov/`
+const apikey = "1h6fThyqYBoeLlQnG4f0exlaWaY2BSe4uH84oHD2";
+const api = `https://api.nasa.gov/planetary/apod?api_key=${apikey}`;
 
 export const ImageOfTheDay = () => {
-  const [image, setImage] = useState("https://via.placeholder.com/100");
+  const [image, setImage] =
+    useState(`https://via.placeholder.com/${AppDefaultDimensions.width}
+  `);
   const [imgTitle, setImageTitle] = useState("NASA Image of the Day");
   useEffect(() => {
     fetch(api)
@@ -16,8 +22,11 @@ export const ImageOfTheDay = () => {
   }, []);
 
   return (
-    <div>
-      <img src={image} alt={imgTitle} />
-    </div>
+    <img
+      src={image}
+      id="nasa-image"
+      alt={imgTitle}
+      style={{ width: AppDefaultDimensions.width }}
+    />
   );
 };
